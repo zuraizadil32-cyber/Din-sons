@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ff6a00">
-<title>DNS — Din&Sons Shopping</title>
+<title>DNS â€” Din&Sons Shopping</title>
 <style>
 :root{--o:#ff6500;--o2:#ff8a00;--bg:#f7f7f7;--card:#fff;--ink:#171717;--muted:#777;--line:#eee;--green:#20a464}
 *{box-sizing:border-box}
@@ -118,7 +118,7 @@ a{text-decoration:none;color:inherit}
 <body>
 
 <!-- TOP BAR -->
-<div class="top">?? DIN&SONS — JARANWALA &nbsp; | &nbsp; Fast & Convenient Everyday Shopping</div>
+<div class="top">?? DIN&SONS â€” JARANWALA &nbsp; | &nbsp; Fast & Convenient Everyday Shopping</div>
 
 <!-- NAVBAR -->
 <nav class="nav">
@@ -141,7 +141,7 @@ a{text-decoration:none;color:inherit}
   <div>
     <div style="font-weight:900;color:#ff9a4c">WELCOME TO DNS</div>
     <h1>Your everyday shopping, made simple.</h1>
-    <p>Discover groceries, beverages, household essentials, personal care and more from Din&Sons — all in one modern shopping experience.</p>
+    <p>Discover groceries, beverages, household essentials, personal care and more from Din&Sons â€” all in one modern shopping experience.</p>
     <button class="btn orange" onclick="document.getElementById('products').scrollIntoView()">Shop Now ?</button>
     <a class="btn white" href="https://www.instagram.com/dinandsons.jaranwala/" target="_blank">Instagram ?</a>
   </div>
@@ -184,7 +184,7 @@ a{text-decoration:none;color:inherit}
 <!-- CART MODAL -->
 <div class="modal-overlay" id="cartModal">
   <div class="modal">
-    <button class="close" onclick="closeCart()">×</button>
+    <button class="close" onclick="closeCart()">Ã—</button>
     <h2>Your Cart</h2>
     <div id="cartItems"></div>
     <div class="total" id="cartTotal"></div>
@@ -195,7 +195,7 @@ a{text-decoration:none;color:inherit}
 <!-- ADMIN DASHBOARD MODAL -->
 <div class="modal-overlay" id="adminModal">
   <div class="modal">
-    <button class="close" onclick="closeAdminDashboard()">×</button>
+    <button class="close" onclick="closeAdminDashboard()">Ã—</button>
     <h2>Admin Dashboard</h2>
     <div class="admin-dashboard-tabs" style="margin-top:15px">
       <button class="admin-tab active" id="tabOrdersBtn" onclick="switchAdminTab('orders')">Customer Orders</button>
@@ -231,7 +231,7 @@ a{text-decoration:none;color:inherit}
 <!-- EDIT PRODUCT MODAL -->
 <div class="modal-overlay" id="editModal">
   <div class="modal">
-    <button class="close" onclick="closeEditModal()">×</button>
+    <button class="close" onclick="closeEditModal()">Ã—</button>
     <h2>Edit Product</h2>
     <input type="hidden" id="editItemId">
     <input class="field" id="editItemName" placeholder="Product Name">
@@ -254,9 +254,9 @@ a{text-decoration:none;color:inherit}
 
 <!-- FOOTER -->
 <footer class="footer">
-  <strong>DNS — Din&Sons</strong>
+  <strong>DNS â€” Din&Sons</strong>
   <p>Jaranwala, Faisalabad, Punjab, Pakistan</p>
-  <p>© 2026 Din&Sons. Online shopping experience.</p>
+  <p>Â© 2026 Din&Sons. Online shopping experience.</p>
 </footer>
 
 <script>
@@ -362,7 +362,7 @@ window.onclick = function() {
 function openDetail(id) {
   const p = products.find(x => x.id === id);
   document.getElementById("detailBox").innerHTML = `
-    <button class="close" onclick="closeDetail()">×</button>
+    <button class="close" onclick="closeDetail()">Ã—</button>
     <div class="detailgrid">
       <img src="${p.img}" alt="${p.name}">
       <div>
@@ -419,10 +419,10 @@ function renderCart() {
     let p = products.find(y => y.id === x.id);
     if(!p) return '';
     total += p.price * x.qty;
-    return `<div class="cartitem"><div><b>${p.name}</b><br><small>${money(p.price)} × ${x.qty}</small></div><div><b>${money(p.price * x.qty)}</b><br><button onclick="removeCart(${p.id})" style="color:#e33;background:none">Remove</button></div></div>`;
+    return `<div class="cartitem"><div><b>${p.name}</b><br><small>${money(p.price)} Ã— ${x.qty}</small></div><div><b>${money(p.price * x.qty)}</b><br><button onclick="removeCart(${p.id})" style="color:#e33;background:none">Remove</button></div></div>`;
   }).join("");
   document.getElementById("cartTotal").textContent = "Total: " + money(total);
-  document.getElementById("checkoutForm").innerHTML = `<h3>Checkout</h3><input class="field" id="custName" placeholder="Full Name"><input class="field" id="custPhone" placeholder="Phone Number"><input class="field" id="custAddress" placeholder="Delivery Address"><select class="field" id="payment"><option>Cash on Delivery</option><option>Bank Transfer</option></select><button class="bigbtn buy" onclick="placeOrder()">Place Order — ${money(total)}</button>`;
+  document.getElementById("checkoutForm").innerHTML = `<h3>Checkout</h3><input class="field" id="custName" placeholder="Full Name"><input class="field" id="custPhone" placeholder="Phone Number"><input class="field" id="custAddress" placeholder="Delivery Address"><select class="field" id="payment"><option>Cash on Delivery</option><option>Bank Transfer</option></select><button class="bigbtn buy" onclick="placeOrder()">Place Order â€” ${money(total)}</button>`;
 }
 
 function removeCart(id) { cart = cart.filter(x => x.id !== id); saveCart(); renderCart(); }
@@ -488,7 +488,7 @@ function renderAdminOrders() {
   box.innerHTML = orders.map(o => `
     <div class="live">
       <b>Order ID: ${o.id}</b><br>
-      Customer: ${o.name} • ${o.phone}<br>
+      Customer: ${o.name} â€¢ ${o.phone}<br>
       Address: ${o.address}<br>
       Payment Method: ${o.payment}<br>
       <span class="status">${o.status}</span><br>
